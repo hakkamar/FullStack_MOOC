@@ -1,0 +1,39 @@
+title 0.5 Single page app
+
+kayttaja->selain:
+note left of selain
+   K‰ytt‰j‰ menee selaimella osoitteeseen
+   https://fullstack-exampleapp.herokuapp.com/spa
+end note
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/spa
+note left of palvelin
+   Sivun HTML, otsikko ja formi uusien muistiinpanojen tallentamiseen.
+   Koodi ei sis‰ll‰ muistiinpanoja sis‰lt‰v‰‰ listaa.
+end note
+palvelin->selain: status 200, sivun HTML-koodi
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/main.css
+note left of palvelin
+  Sivun ulkoasun muotoiluun liittyv‰t tiedot.
+end note
+palvelin->selain: status 200, sivun CSS-tyylitiedosto
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/spa.js
+note left of palvelin
+   Sivun JavaScript mik‰ lataa muistiinpanot sis‰lt‰v‰n JSON-muotoisen datan
+   ja muodostaa datan avulla selaimeen bulletlistan muistiinpanojen sis‰llˆst‰.
+end note
+palvelin->selain: status 200, sivun JavaScript-koodi
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/data.json
+note left of palvelin
+  Sivun muistiinpanot JSON-muotoisena raakadatana.
+end note
+palvelin->selain: status 200, sivun JSON-data
+
+note left of selain
+ Selain n‰ytt‰‰ palvelimen palauttaman HTML:n johon on 
+ upotettu lista olemassa olevista muistiinpanoista ja formi, 
+ mill‰ voi tallentaa uusia muistiinpanoja.
+end note

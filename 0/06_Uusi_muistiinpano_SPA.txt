@@ -1,0 +1,37 @@
+title 0.6 Uusi muistiinpano SPA:ssa
+
+kayttaja->selain:
+note left of selain
+   Käyttäjä luo uuden muistiinpanon ollessaan sivulla
+   https://fullstack-exampleapp.herokuapp.com/spa
+   Eli kirjoittaa tekstikenttään jotain ja painaa nappia "tallenna".
+end note
+
+note right of selain
+    Koodi hakee sivulta lomake-elementin ja rekisteröi sille tapahtumankäsittelijän 
+    hoitamaan tilanteen, missä lomake “submitoidaan”, eli lähetetään. 
+    
+    Tapahtumankäsittelijä kutsuu heti metodia jolla se estää 
+    lomakkeen lähetyksen oletusarvoisen toiminnan. 
+    
+    Tämän jälkeen se luo muistiinpanon, lisää sen muistiinpanojen listalle, 
+    piirtää ruudun sisällön eli muistiinpanojen listan uudelleen 
+    ja lähettää uuden muistiinpanon palvelimelle.
+end note
+
+selain->palvelin: POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+note right of palvelin
+   Palvelin luo uutta muistiinpanoa vastaavan olion
+   ja laittaa sen muistiinpanot sisältävään taulukkoon.
+
+   Palvelin ei talleta muistiinpanoja tietokantaan,
+   joten uudet muistiinpanot katoavat aina
+   Herokun uudelleenkäynnistäessä palvelun.
+end note
+palvelin->selain: status 201, Created
+
+note left of selain
+  Selaimessa näkyy lista olemassa olevista muistiinpanoista jotka
+  sisältävät uuden lisätyn musitiinpanon, sekä formin
+  millä voi tallentaa uusia muistiinpanoja.
+end note

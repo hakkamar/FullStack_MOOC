@@ -1,0 +1,79 @@
+title 0.3 muistiinpanojen sivu
+
+
+
+kayttaja->selain:
+
+note left of selain
+
+   K‰ytt‰j‰ navigoi muistiinpanojen sivulle: 
+   https://fullstack-exampleapp.herokuapp.com/notes
+
+   Ts. k‰ytt‰j‰ klikkaa "muistiinpanot" -linkki‰ 
+
+   sivulla fullstack-exampleapp.herokuapp.com
+
+end note
+
+
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/notes
+
+note left of palvelin
+  
+   Sivun HTML, otsikko ja formi uusien muistiinpanojen tallentamiseen.
+  
+   Koodi ei sis‰ll‰ muistiinpanoja sis‰lt‰v‰‰ listaa.
+
+end note
+palvelin->selain: status 200, sivun HTML-koodi
+
+
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/main.js
+
+note left of palvelin
+  
+   Sivun JavaScript mik‰ lataa muistiinpanot sis‰lt‰v‰n JSON-muotoisen datan
+ 
+  ja muodostaa datan avulla selaimeen bulletlistan muistiinpanojen sis‰llˆst‰.
+
+end note
+
+palvelin->selain: status 200, sivun JavaScript-koodi
+
+
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/data.json
+
+note left of palvelin
+
+  Sivun muistiinpanot JSON-muotoisena raakadatana.
+
+end note
+
+palvelin->selain: status 200, sivun JSON-data
+
+
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/main.css
+
+note left of palvelin
+
+  Sivun ulkoasun muotoiluun liittyv‰t tiedot.
+
+end note
+
+palvelin->selain: status 200, sivun CSS-tyylitiedosto
+
+
+
+note left of selain
+
+ Selain n‰ytt‰‰ palvelimen palauttaman HTML:n johon on 
+
+ upotettu lista olemassa olevista muistiinpanoista ja formi, 
+
+ mill‰ voi tallentaa uusia muistiinpanoja.
+
+end note
