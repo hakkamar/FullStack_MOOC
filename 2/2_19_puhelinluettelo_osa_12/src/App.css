@@ -1,0 +1,15 @@
+body {
+  background-color: rgb(238, 238, 170);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.error {
+  color: black;
+  background: green;
+  border-style: solid;  
+  font-size: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
